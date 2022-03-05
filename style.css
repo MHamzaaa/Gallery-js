@@ -6,26 +6,21 @@
 
 
 .container{
-    position: relative;
-    background-position: center;
-    background-size: cover;
+    /* position: relative; */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #3d3d3d;
-    background-image: url("./pexels-ivan-cujic-109479.jpg");
 }
 
 
 .postCont{
-    /* background-color: #3753A4; */
     background-color: #4b4b4b;
     position: relative;
     width: 800px;
-    height: 500px;
+    /* height: 500px; */
     border: 1px solid #500C09;
-    /* background-color: cadetblue; */
     border-radius: 1%;
 }
 
@@ -91,6 +86,7 @@
     justify-content: center;
     width: 100%;
     cursor: pointer;
+    padding: 5px;
 }
 
 .imgCont{
@@ -99,7 +95,6 @@
     grid-gap: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 300px;
 }
 
 @media (max-width: 900px){
