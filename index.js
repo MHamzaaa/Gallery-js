@@ -25,19 +25,16 @@ var uploadImg = async () => {
         let url = await data.ref.getDownloadURL();
         console.log(url);
         imageList.push(url);
-        refreshUI();
         loadSingleImage(url);
         
-        var data = {
+        var dataOne = {
             images : imageList
         }
 
         document.getElementById('svg').style.display = "none";
         inputImage.value = "";
-        var imageTag = document.getElementById('img');
-        imageTag.src = url;
 
-        await updateDocument(data);
+        await updateDocument(dataOne);
         
     } catch (error) {
         console.log(error);
@@ -66,6 +63,7 @@ var readDocumentById = async () => {
 var updateDocument = async (data) => {
     try {
         var document = await db.collection("Images").doc("image-list").set(data, {merge : true});
+        return document;
     } catch (error) {
         console.log(error);
     }
@@ -76,15 +74,15 @@ function refreshUI () {
     var list = document.querySelector('.imgCont');
     list.innerHTML = '';
     for (let i = 0; i < imageList.length; i++) {
-        list.innerHTML += `<img id="img" src="${imageList[i]}" >` ;
+        list.innerHTML += `<img class="img" src="${imageList[i]}" >` ;
     }
 }
 
-function loadSingleImage(){
-    var list = document.querySelector('.list');
+function loadSingleImage(url){
+    var list = document.querySelector('.imgCont');
     let ele = document.createElement('img');
     ele.src = url;
-    ele.classList.add("image");
+    ele.classList.add("img");
     list.appendChild(ele);
 }
 
@@ -92,6 +90,8 @@ Start();
 
 async function Start () {
     var data = await readDocumentById();
-    imageList = data.images;
+    if(data.images){
+        imageList = data.images;
+    }
     refreshUI();
 }
