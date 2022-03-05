@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploader</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/30c017f6c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+
+    <script>
+        // Import the functions you need from the SDKs you need
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDYxbnJ0dXHxGh-sMR2S19ZooU_ymPQ-FQ",
+          authDomain: "auth-6fdd8.firebaseapp.com",
+          projectId: "auth-6fdd8",
+          storageBucket: "auth-6fdd8.appspot.com",
+          messagingSenderId: "929392229076",
+          appId: "1:929392229076:web:b40dc4a45cc24ff8fb1941"
+        };
+      
+         // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+    
+    <div class="container">
+        <div class="postCont">
+            <div class="header">
+                <button id="uploadBtn"> <i class="fa-solid fa-upload"></i> Upload</button>
+                <input type="image" style="display: none;" id="svg" src="./25.svg">
+                <input type="file" id="chooseFile">
+            </div>
+            <div class="imgCont">
+               <div><img id="img" src="" alt=""></div>     
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="./index.js"></script>
+</body>
+</html>

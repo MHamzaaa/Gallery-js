@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+.container{
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #3d3d3d;
+    background-image: url("./pexels-ivan-cujic-109479.jpg");
+}
+
+
+.postCont{
+    /* background-color: #3753A4; */
+    background-color: #4b4b4b;
+    position: relative;
+    width: 800px;
+    height: 500px;
+    border: 1px solid #500C09;
+    /* background-color: cadetblue; */
+    border-radius: 1%;
+}
+
+
+.header{
+    /* background-color: lightcoral; */
+    border-bottom: 2px solid black;
+}
+
+#uploadBtn{
+    width: 150px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: yellow;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 23px;
+}
+
+#uploadBtn:hover{
+    cursor: pointer;
+}
+
+#chooseFile{
+    font-size: 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+
+@media (max-width: 991px){
+
+    .postCont{        
+        width: 300px;
+    }
+
+    #uploadBtn{
+        margin-left: 70px;
+    }
+
+    #chooseFile{
+        font-size: 20px;
+        margin: 10px;
+    }
+}
+
+
+#svg{
+    position: relative;
+    top: 15px;
+    margin-right: 5px;
+    width: 50px;
+    height: 40px;
+}
+
+#img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+   
+}
+
+.imgCont{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 254px);
+    grid-gap: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 425px;
+}
+
+@media (max-width: 900px){
+    .imgCont{
+        grid-template-columns: repeat(auto-fit, 290px);
+        height: 355px;
+        gap: 1px;
+    }
+
+    #img{
+        height: 90%;  
+    }
+}
