@@ -58,6 +58,10 @@
 
 @media (max-width: 991px){
 
+    #chooseFile{
+        font-size: 10px;
+    }
+
     .postCont{        
         width: 300px;
     }
